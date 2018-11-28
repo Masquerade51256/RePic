@@ -1,0 +1,7 @@
+
+*.iml
+app/src/main/res/layout/personal_info.xml
+.idea/workspace.xml
+*.bin
+*.lock
+*.ser
