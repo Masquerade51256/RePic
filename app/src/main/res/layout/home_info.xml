@@ -6,13 +6,14 @@
   android:layout_height="wrap_content"
   android:gravity="center_horizontal"
   android:orientation="horizontal"
+  android:id="@+id/characterView"
   android:padding="@dimen/element_padding">
 
   <com.rpgroup.repic.view.views.CircleImageView
 
     android:id="@+id/imgView_portrait"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:src="@drawable/profile_pic1"
     />
 
@@ -35,11 +36,12 @@
     android:id="@+id/tv_publishTime"
     android:layout_width="248dp"
     android:layout_height="wrap_content"
+    android:layout_marginEnd="38dp"
+    android:layout_alignParentEnd="true"
     android:layout_below="@+id/tv_userName"
-    android:layout_toRightOf="@+id/imgView_portrait"
-    android:paddingRight="10dp"
-    android:paddingLeft="10dp"
     android:paddingTop="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     android:text="2018-11-20 12:34"
     android:textSize="24dp"/>
 
