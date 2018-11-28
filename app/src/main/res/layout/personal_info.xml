@@ -8,7 +8,7 @@
   android:orientation="horizontal"
   android:padding="@dimen/element_padding">
 
-  <com.example.apple.lookthrough.view.views.CircleImageView
+  <com.rpgroup.repic.view.views.CircleImageView
     android:id="@+id/imgView_portrait_personal"
     android:layout_width="100dp"
     android:layout_height="100dp"
@@ -86,7 +86,7 @@
     android:layout_marginTop="10dp"
     android:layout_height="1dp"
     android:background="#707070"/>
-  <com.example.apple.lookthrough.view.views.SquareFrameLayout
+  <com.rpgroup.repic.view.views.SquareFrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingTop="@dimen/element_padding"
@@ -96,7 +96,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:src="@drawable/pic"/>
-  </com.example.apple.lookthrough.view.views.SquareFrameLayout>
+  </com.rpgroup.repic.view.views.SquareFrameLayout>
 
 
 </RelativeLayout>
