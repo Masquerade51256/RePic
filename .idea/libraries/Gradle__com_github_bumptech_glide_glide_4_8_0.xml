@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.bumptech.glide:glide-4.8.0">
+    <CLASSES>
+      <root url="file://D:/UC_Download/gradle-4.10.2/caches/transforms-1/files-1.1/glide-4.8.0.aar/5038a7f93218e88bd16e724bd411ad3c/res" />
+      <root url="jar://D:/UC_Download/gradle-4.10.2/caches/transforms-1/files-1.1/glide-4.8.0.aar/5038a7f93218e88bd16e724bd411ad3c/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/UC_Download/gradle-4.10.2/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.8.0/ffc2684f1c6436d3942d82d29a5344942792594/glide-4.8.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
