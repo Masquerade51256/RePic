@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@android:color/white"
+android:id="@+id/recyclerContainer">
+
+  <!--下拉刷新控件-->
+  <android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipeRefreshView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--SwipeRefrshLayout+RecyclerView实现刷新功能-->
+
+    <android.support.v7.widget.RecyclerView
+      android:id="@+id/recyclerView"
+      android:scrollbars="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+  </android.support.v4.widget.SwipeRefreshLayout>
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="successfully"
+    android:layout_alignParentBottom="true"
+    android:gravity="center"
+    android:background="@android:color/white"/>
+
+  <!--Note: You need to add the copyright notice
+  to strings(res/values/strings.xml)-->
+
+
+</RelativeLayout>
