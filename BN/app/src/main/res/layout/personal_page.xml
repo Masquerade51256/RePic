@@ -50,29 +50,6 @@
       android:text="作品"
       android:textColor="#707070"
       android:textSize="36px"/>
-    <TextView
-      android:id="@+id/tv_favoriteCount"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/tv_userName_personal"
-      android:layout_toEndOf="@+id/tv_creationCountBelow"
-      android:paddingTop="10dp"
-      android:paddingLeft="10dp"
-      android:paddingRight="10dp"
-      android:text="3"
-      android:textColor="#515151"
-      android:textSize="45px"/>
-    <TextView
-      android:id="@+id/tv_favoriteCountBelow"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/tv_creationCount"
-      android:layout_toEndOf="@+id/tv_creationCountBelow"
-      android:paddingLeft="10dp"
-      android:paddingRight="10dp"
-      android:text="赞图"
-      android:textColor="#707070"
-      android:textSize="36px"/>
     <View
       android:id="@+id/horizontal_line"
       android:layout_width="match_parent"
