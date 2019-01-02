@@ -1,4 +1,4 @@
-package com.rpgroup.bn.View;
+package com.rpgroup.bn.view.views;
 
 import android.content.Context;
 import android.graphics.*;

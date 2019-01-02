@@ -1,4 +1,4 @@
-package com.rpgroup.bn.View
+package com.rpgroup.bn.view.common
 import android.support.annotation.LayoutRes
 import android.support.v7.widget.RecyclerView
 import android.view.View

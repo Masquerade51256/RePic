@@ -1,4 +1,4 @@
-package com.rpgroup.bn.Model
+package com.rpgroup.bn.model
 
 
 data class MessageItem(

@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">RePic</string>
     <string name="bottom_text">我是有底线的</string>
-    <string name="hint_email">Email Address</string>
+    <string name="hint_name">User Name</string>
     <string name="hint_password">Password</string>
+    <string name="hint_password1">Password again </string>
+
 
     <string name="tab_1">Label 1</string>
     <string name="tab_2">Label 2</string>

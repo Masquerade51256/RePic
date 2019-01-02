@@ -39,7 +39,6 @@ public class DemoFragment extends Fragment {
 			/*recycler   View view = inflater.inflate(R.layout.square_page, container, false);*/
 			View view = inflater.inflate(R.layout.message_info, container, false);
 			initSquarePG(view);
-
 			return view;
 		} else if(getArguments().getInt("index", 1) == 1){
 			View view = inflater.inflate(R.layout.create_page, container, false);

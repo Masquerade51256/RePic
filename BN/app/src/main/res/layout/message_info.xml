@@ -9,7 +9,7 @@
   android:id="@+id/characterView"
   android:padding="@dimen/element_padding">
 
-  <com.rpgroup.bn.View.CircleImageView
+  <com.rpgroup.bn.view.views.CircleImageView
 
           android:id="@+id/imgView_portrait"
           android:layout_width="66dp"

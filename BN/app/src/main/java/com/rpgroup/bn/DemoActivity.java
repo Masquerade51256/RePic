@@ -45,9 +45,10 @@ public class DemoActivity extends AppCompatActivity {
 				.getBoolean("translucentNavigation", false);
 		setTheme(enabledTranslucentNavigation ? R.style.AppTheme_TranslucentNavigation : R.style.AppTheme);
 		setContentView(R.layout.activity_home);
-        Intent intent = getIntent();
 
-        initUI();
+		Intent intent = getIntent();
+
+		initUI();
 	}
 
 	@Override

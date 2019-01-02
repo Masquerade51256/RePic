@@ -9,7 +9,7 @@
             android:id="@+id/personal_page">
 
 
-        <com.rpgroup.bn.View.CircleImageView
+        <com.rpgroup.bn.view.views.CircleImageView
             android:id="@+id/imgView_portrait_personal"
             android:layout_width="89dp"
             android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
             android:layout_marginTop="10dp"
             android:layout_height="1dp"
             android:background="#707070"/>
-    <com.rpgroup.bn.View.SquareFrameLayout
+    <com.rpgroup.bn.view.SquareFrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/element_padding"
@@ -99,6 +99,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/pic"/>
-    </com.rpgroup.bn.View.SquareFrameLayout>
+    </com.rpgroup.bn.view.SquareFrameLayout>
 
     </RelativeLayout>

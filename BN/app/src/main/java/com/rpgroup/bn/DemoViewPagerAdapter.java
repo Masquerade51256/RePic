@@ -21,8 +21,8 @@ public class DemoViewPagerAdapter extends FragmentPagerAdapter {
 		fragments.add(DemoFragment.newInstance(0));
 		fragments.add(DemoFragment.newInstance(1));
 		fragments.add(DemoFragment.newInstance(2));
-		fragments.add(DemoFragment.newInstance(3));
-		fragments.add(DemoFragment.newInstance(4));
+//		fragments.add(DemoFragment.newInstance(3));
+//		fragments.add(DemoFragment.newInstance(4));
 	}
 
 	@Override

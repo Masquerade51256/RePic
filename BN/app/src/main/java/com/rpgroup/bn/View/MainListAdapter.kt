@@ -1,6 +1,9 @@
-package com.rpgroup.bn.View
+package com.rpgroup.bn.view
 
-class MainListAdapter (items:List<AnyItemAdapter>):RecyclerListAdapter(items){
+import com.rpgroup.bn.view.common.AnyItemAdapter
+import com.rpgroup.bn.view.common.RecyclerListAdapter
+
+class MainListAdapter (items:List<AnyItemAdapter>): RecyclerListAdapter(items){
     fun add(itemAdapter: AnyItemAdapter){
         items+=itemAdapter
         val index=items.indexOf(itemAdapter)
