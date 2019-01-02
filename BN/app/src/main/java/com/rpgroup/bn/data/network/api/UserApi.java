@@ -1,4 +1,4 @@
-package com.rpgroup.bn.data.network;
+package com.rpgroup.bn.data.network.api;
 
 import com.rpgroup.bn.model.User;
 import io.reactivex.Observable;

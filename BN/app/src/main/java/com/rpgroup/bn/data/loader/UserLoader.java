@@ -1,6 +1,6 @@
 package com.rpgroup.bn.data.loader;
 
-import com.rpgroup.bn.data.network.UserApi;
+import com.rpgroup.bn.data.network.api.UserApi;
 import com.rpgroup.bn.data.network.provider.RetrofitServiceManager;
 import com.rpgroup.bn.model.User;
 import io.reactivex.Observable;

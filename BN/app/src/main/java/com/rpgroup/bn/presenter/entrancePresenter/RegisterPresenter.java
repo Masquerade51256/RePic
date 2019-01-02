@@ -4,6 +4,7 @@ import android.util.Log;
 import com.rpgroup.bn.model.User;
 import com.rpgroup.bn.data.loader.UserLoader;
 import com.rpgroup.bn.presenter.BasePresenter;
+import com.rpgroup.bn.presenter.MD5Util;
 import com.rpgroup.bn.view.entrance.RegisterView;
 import io.reactivex.functions.Consumer;
 
@@ -12,15 +13,14 @@ public class RegisterPresenter extends BasePresenter<RegisterView> {
 
   private boolean nameExisted;
 
-  public void setNameExisted(boolean nameExisted) {
-    this.nameExisted = nameExisted;
-  }
+  public void setNameExisted(boolean nameExisted) { this.nameExisted = nameExisted; }
 
   public RegisterPresenter() {
     this.mUserLoader = new UserLoader();
   }
 
   public void checkRegister(String name, String password, String password1){
+    String md5Password = MD5Util.MD5(password);
     if(getView() != null){
 
       if(name.isEmpty()|| password.isEmpty()||password1.isEmpty()){
@@ -36,7 +36,7 @@ public class RegisterPresenter extends BasePresenter<RegisterView> {
       }
 
       else {
-        okToRegister(name,password);
+        okToRegister(name,md5Password);
       }
     }
   }
@@ -57,7 +57,7 @@ public class RegisterPresenter extends BasePresenter<RegisterView> {
     return nameExisted;
   }
 
-  public void okToRegister(final String name, String password){
+  private void okToRegister(final String name, String password){
     this.mUserLoader.insertUser(name,password).subscribe(new Consumer<User>() {
       @Override
       public void accept(User user) throws Exception {
