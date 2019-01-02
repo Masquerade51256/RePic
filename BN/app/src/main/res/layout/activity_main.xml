@@ -9,11 +9,13 @@
   android:background="#ffffff">
 
   <android.support.v7.widget.AppCompatImageView
-          android:id="@+id/logo_iv"
-          android:layout_width="wrap_content"
-          android:layout_height="200dp"
-          android:layout_alignParentTop="true"
-          android:src="@drawable/logo" android:layout_centerHorizontal="true" android:layout_marginTop="86dp"/>
+    android:id="@+id/logo_iv"
+    android:layout_width="wrap_content"
+    android:layout_height="200dp"
+    android:layout_marginTop="74dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:src="@drawable/logo"/>
 
   <android.support.design.widget.TextInputLayout
     android:layout_width="wrap_content"

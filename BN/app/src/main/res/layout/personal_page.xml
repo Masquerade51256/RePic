@@ -1,104 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:padding="@dimen/element_padding"
-            android:id="@+id/personal_page">
-
-
-        <com.rpgroup.bn.view.views.CircleImageView
-            android:id="@+id/imgView_portrait_personal"
-            android:layout_width="89dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/profile_pic1"
-            android:layout_alignParentStart="true" android:layout_marginStart="23dp"
-            android:layout_alignParentTop="true" android:layout_marginTop="26dp"/>
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:gravity="center_horizontal"
+  android:orientation="horizontal"
+  android:padding="@dimen/element_padding"
+  android:id="@+id/personal_page">
+    <com.rpgroup.bn.view.views.CircleImageView
+      android:id="@+id/imgView_portrait_personal"
+      android:layout_width="96px"
+      android:layout_height="96px"
+      android:src="@drawable/profile_pic1"
+      android:layout_alignParentStart="true"
+      android:layout_marginStart="30px"
+      android:layout_alignParentTop="true"
+      android:layout_marginTop="100px"/>
     <TextView
-            android:id="@+id/tv_userName_personal"
-            android:layout_width="212dp"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imgView_portrait_personal"
-            android:layout_marginTop="29dp"
-            android:layout_alignParentRight="true"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:shadowColor="#515151"
-            android:shadowDx="5"
-            android:shadowDy="5"
-            android:shadowRadius="0.01"
-            android:text="LyXuAn"
-            android:textColor="#515151"
-            android:textSize="30dp" android:layout_toEndOf="@+id/imgView_portrait_personal"
-            android:layout_marginStart="24dp" android:layout_marginRight="6dp"/>
+      android:id="@+id/tv_userName_personal"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignTop="@+id/imgView_portrait_personal"
+      android:layout_alignParentRight="true"
+      android:text="LyXuAn"
+      android:textColor="#515151"
+      android:textSize="42px"
+      android:layout_toEndOf="@+id/imgView_portrait_personal"
+      android:layout_marginStart="11dp"/>
 
     <TextView
-            android:id="@+id/tv_creationCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imgView_portrait_personal"
-            android:layout_toRightOf="@+id/imgView_portrait_personal"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:text="18"
-            android:textColor="#515151"
-            android:textSize="20dp" android:layout_marginLeft="5dp" android:layout_marginTop="0dp"/>
+      android:id="@+id/tv_creationCount"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignStart="@+id/tv_userName_personal"
+      android:layout_below="@+id/tv_userName_personal"
+      android:paddingTop="10dp"
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:text="18"
+      android:textColor="#515151"
+      android:textSize="45px"/>
     <TextView
-            android:id="@+id/tv_creationCountBelow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="作品"
-            android:textColor="#707070"
-            android:layout_below="@+id/tv_creationCount"
-            android:layout_toRightOf="@+id/imgView_portrait_personal"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:textSize="20dp"/>
+      android:id="@+id/tv_creationCountBelow"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignStart="@+id/tv_userName_personal"
+      android:layout_below="@+id/tv_creationCount"
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:text="作品"
+      android:textColor="#707070"
+      android:textSize="36px"/>
     <TextView
-            android:id="@+id/tv_favoriteCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imgView_portrait_personal"
-            android:layout_toRightOf="@+id/tv_creationCountBelow"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:text="3"
-            android:textColor="#515151"
-            android:textSize="20dp" android:layout_marginLeft="41dp" android:layout_marginTop="5dp"/>
+      android:id="@+id/tv_favoriteCount"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/tv_userName_personal"
+      android:layout_toEndOf="@+id/tv_creationCountBelow"
+      android:paddingTop="10dp"
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:text="3"
+      android:textColor="#515151"
+      android:textSize="45px"/>
     <TextView
-            android:id="@+id/tv_favoriteCountBelow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="赞图"
-            android:textColor="#707070"
-            android:layout_below="@+id/tv_creationCount"
-            android:layout_toRightOf="@+id/tv_creationCountBelow"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:textSize="20dp" android:layout_marginLeft="27dp" android:layout_marginTop="-1dp"/>
-
+      android:id="@+id/tv_favoriteCountBelow"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/tv_creationCount"
+      android:layout_toEndOf="@+id/tv_creationCountBelow"
+      android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+      android:text="赞图"
+      android:textColor="#707070"
+      android:textSize="36px"/>
     <View
-            android:id="@+id/horizontal_line"
-            android:layout_width="match_parent"
-            android:layout_below="@+id/tv_creationCountBelow"
-            android:layout_marginTop="10dp"
-            android:layout_height="1dp"
-            android:background="#707070"/>
+      android:id="@+id/horizontal_line"
+      android:layout_width="match_parent"
+      android:layout_below="@+id/tv_creationCountBelow"
+      android:layout_marginTop="10dp"
+      android:layout_height="1dp"
+      android:background="#707070"/>
     <com.rpgroup.bn.view.SquareFrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/element_padding"
-            android:layout_below="@+id/horizontal_line">
+      android:layout_width="match_parent"
+      android:layout_height="224dp"
+      android:layout_below="@+id/horizontal_line"
+      android:paddingTop="@dimen/element_padding">
         <ImageView
-                android:id="@+id/imgView_pic_personal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/pic"/>
+          android:id="@+id/imgView_pic_personal"
+          android:layout_width="match_parent"
+          android:layout_height="210dp"
+          android:src="@drawable/pic"/>
     </com.rpgroup.bn.view.SquareFrameLayout>
-
-    </RelativeLayout>
+</RelativeLayout>

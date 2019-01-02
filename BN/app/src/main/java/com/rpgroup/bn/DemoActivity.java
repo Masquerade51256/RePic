@@ -192,22 +192,22 @@ public class DemoActivity extends AppCompatActivity {
 		viewPager.setAdapter(adapter);
 
 		currentFragment = adapter.getCurrentFragment();
-
-		handler.postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				// Setting custom colors for notification
-				AHNotification notification = new AHNotification.Builder()
-						.setText(":)")
-						.setBackgroundColor(ContextCompat.getColor(DemoActivity.this, R.color.color_notification_back))
-						.setTextColor(ContextCompat.getColor(DemoActivity.this, R.color.color_notification_text))
-						.build();
-				bottomNavigation.setNotification(notification, 1);
-				Snackbar.make(bottomNavigation, "Snackbar with bottom navigation",
-						Snackbar.LENGTH_SHORT).show();
-
-			}
-		}, 3000);
+//
+//		handler.postDelayed(new Runnable() {
+//			@Override
+//			public void run() {
+//				// Setting custom colors for notification
+//				AHNotification notification = new AHNotification.Builder()
+//						.setText(":)")
+//						.setBackgroundColor(ContextCompat.getColor(DemoActivity.this, R.color.color_notification_back))
+//						.setTextColor(ContextCompat.getColor(DemoActivity.this, R.color.color_notification_text))
+//						.build();
+//				bottomNavigation.setNotification(notification, 1);
+//				Snackbar.make(bottomNavigation, "Snackbar with bottom navigation",
+//						Snackbar.LENGTH_SHORT).show();
+//
+//			}
+//		}, 3000);
 		
 		//bottomNavigation.setDefaultBackgroundResource(R.drawable.bottom_navigation_background);
 	}
