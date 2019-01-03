@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.rpgroup.bn.view.views.SquareFrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="224dp"
+  android:layout_below="@+id/horizontal_line"
+  android:paddingTop="@dimen/element_padding"
+  android:layout_margin="5dp">
+
+    <ImageView
+      android:id="@+id/imgView_pic_personal"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      />
+
+</com.rpgroup.bn.view.views.SquareFrameLayout>

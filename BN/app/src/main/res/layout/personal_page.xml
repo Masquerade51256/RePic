@@ -57,15 +57,18 @@
       android:layout_marginTop="10dp"
       android:layout_height="1dp"
       android:background="#707070"/>
-    <com.rpgroup.bn.view.SquareFrameLayout
+
+    <android.support.v4.widget.SwipeRefreshLayout
+      android:id="@+id/PPswipeRefreshView"
       android:layout_width="match_parent"
-      android:layout_height="224dp"
-      android:layout_below="@+id/horizontal_line"
-      android:paddingTop="@dimen/element_padding">
-        <ImageView
-          android:id="@+id/imgView_pic_personal"
+      android:layout_height="match_parent"
+      android:layout_below="@+id/horizontal_line">
+        <!--SwipeRefrshLayout+RecyclerView实现刷新功能-->
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/PPrecyclerView"
+          android:scrollbars="vertical"
           android:layout_width="match_parent"
-          android:layout_height="210dp"
-          android:src="@drawable/pic"/>
-    </com.rpgroup.bn.view.SquareFrameLayout>
+          android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>

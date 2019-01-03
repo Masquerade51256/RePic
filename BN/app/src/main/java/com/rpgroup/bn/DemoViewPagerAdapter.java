@@ -4,6 +4,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
 
+import com.rpgroup.bn.view.fragment.EditFragment;
+import com.rpgroup.bn.view.fragment.MessageFragment;
+import com.rpgroup.bn.view.fragment.PersonalFragment;
 import java.util.ArrayList;
 
 /**
@@ -18,11 +21,10 @@ public class DemoViewPagerAdapter extends FragmentPagerAdapter {
 		super(fm);
 
 		fragments.clear();
+		//fragments.add(new MessageFragment());
 		fragments.add(DemoFragment.newInstance(0));
-		fragments.add(DemoFragment.newInstance(1));
-		fragments.add(DemoFragment.newInstance(2));
-//		fragments.add(DemoFragment.newInstance(3));
-//		fragments.add(DemoFragment.newInstance(4));
+		fragments.add(new EditFragment());
+		fragments.add(new PersonalFragment());
 	}
 
 	@Override

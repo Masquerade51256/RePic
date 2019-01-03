@@ -12,12 +12,13 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
+
 /**
  *
  */
 public class DemoFragment extends Fragment {
 	
-	private RelativeLayout fragmentContainer;
+	private View fragmentContainer;
 	private RecyclerView recyclerView;
 	private RecyclerView.LayoutManager layoutManager;
 	
@@ -40,14 +41,12 @@ public class DemoFragment extends Fragment {
 			View view = inflater.inflate(R.layout.message_info, container, false);
 			initSquarePG(view);
 			return view;
-		} else if(getArguments().getInt("index", 1) == 1){
-			View view = inflater.inflate(R.layout.create_page, container, false);
-			initCreatePG(view);
-			return view;
-		}else{
+		} else if(getArguments().getInt("index", 2) == 2){
 			View view = inflater.inflate(R.layout.personal_page, container, false);
 			initPersonalPG(view);
 			return view;
+		}else {
+			return null;
 		}
 	}
 	
@@ -55,7 +54,8 @@ public class DemoFragment extends Fragment {
 	 * 初始化主页面
 	 */
 	private void initSquarePG(View view) {
-		/*RECCYCCLERVIEW
+		//RECCYCCLERVIEW
+        /*
 		ArrayList<MessageItemAdapter> characters = new ArrayList<MessageItemAdapter>();
 
 
@@ -69,8 +69,8 @@ public class DemoFragment extends Fragment {
 			characters.add(new MessageItemAdapter(new MessageItem("1","1","1",1,1)));
 		}
 
-		recyclerView.setAdapter(new MainListAdapter(characters));*/
-
+		recyclerView.setAdapter(new MainListAdapter(characters));
+*/
 		fragmentContainer = view.findViewById(R.id.characterView);
 
 		//Intent intent = getIntent();
@@ -92,9 +92,6 @@ public class DemoFragment extends Fragment {
 
 			}
 		});
-
-
-
 
 		ImageButton btn_comment = view.findViewById(R.id.btn_comment);
 		btn_comment.setOnClickListener(new View.OnClickListener() {
@@ -151,8 +148,9 @@ public class DemoFragment extends Fragment {
 	 * 初始化创作页*/
 
 	private void initCreatePG(View view) {
+		fragmentContainer = view.findViewById(R.id.edit_page);
 
-		fragmentContainer = view.findViewById(R.id.create_page);
+
 	}
 	
 	/**
@@ -184,4 +182,5 @@ public class DemoFragment extends Fragment {
 			fragmentContainer.startAnimation(fadeOut);
 		}
 	}
+
 }

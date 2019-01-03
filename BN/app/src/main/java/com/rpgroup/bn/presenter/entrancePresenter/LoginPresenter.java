@@ -3,6 +3,7 @@ package com.rpgroup.bn.presenter.entrancePresenter;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
+import com.rpgroup.bn.data.InfoConfig;
 import com.rpgroup.bn.model.User;
 import com.rpgroup.bn.data.loader.UserLoader;
 import com.rpgroup.bn.presenter.BasePresenter;
@@ -38,6 +39,7 @@ public class LoginPresenter extends BasePresenter<LoginView> {
           @Override
           public void accept(User user) {
             if (md5Password.equals(user.getPassword())) {
+              InfoConfig.setUserName(name);
               setUserToSharedPreferences(sharedPreferences,name,md5Password);
               getView().onLoginResult(true, name, "登录成功");
             }
