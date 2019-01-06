@@ -21,8 +21,8 @@ public class DemoViewPagerAdapter extends FragmentPagerAdapter {
 		super(fm);
 
 		fragments.clear();
-		//fragments.add(new MessageFragment());
-		fragments.add(DemoFragment.newInstance(0));
+		fragments.add(new MessageFragment());
+		//fragments.add(DemoFragment.newInstance(0));
 		fragments.add(new EditFragment());
 		fragments.add(new PersonalFragment());
 	}

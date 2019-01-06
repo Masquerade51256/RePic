@@ -83,7 +83,7 @@ public class DemoActivity extends AppCompatActivity {
 					currentFragment = adapter.getCurrentFragment();
 				}
 
-				if (wasSelected) {//刷新当前帧
+				if (wasSelected) {//刷新当前碎片
 					//currentFragment.refresh();
 					return true;
 				}

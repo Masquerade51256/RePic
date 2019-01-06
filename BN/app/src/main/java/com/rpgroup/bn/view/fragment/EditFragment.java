@@ -25,7 +25,7 @@ import com.rpgroup.bn.R;
 import com.rpgroup.bn.data.InfoConfig;
 import com.rpgroup.bn.data.network.UploadUtil;
 import com.rpgroup.bn.presenter.EditPresenter;
-import com.rpgroup.bn.view.MoveComponent;
+import com.rpgroup.bn.view.common.MoveComponent;
 import com.rpgroup.bn.view.common.GetPhotoFromGallery;
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -169,9 +169,9 @@ public class EditFragment extends BaseFragment<EditView,EditPresenter> implement
 
         Log.i("save", "saveImg: "+InfoConfig.getUserName());
         Log.i("save", "saveImg: "+String.valueOf(cameraSavePath));
-
-        getPresenter().checkSaveImg(InfoConfig.getUserName(),String.valueOf(cameraSavePath));
-
+        Log.i("myupload", "saveImg: "+String.valueOf(cameraSavePath));
+        getPresenter().checkSaveImg(InfoConfig.getUserName(),cameraSavePath);
+        Log.i("myupload", "finish");
     }
 
     /*****打开相机*****/

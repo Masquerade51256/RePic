@@ -3,6 +3,7 @@ package com.rpgroup.bn.view.fragment;
 import static com.example.apple.marvelgallery.view.common.ViewExtKt.mMap2;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.support.v7.widget.GridLayoutManager;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import com.rpgroup.bn.DemoFragment;
 import com.rpgroup.bn.R;
 import com.rpgroup.bn.model.PersonalPic;
@@ -25,6 +27,7 @@ public class MessageFragment extends DemoFragment {
   private RecyclerView mRecyclerView;
   private SwipeRefreshLayout mSwipeRefreshLayout;
   private MessagePresenter mMessagePresenter;
+
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     view = inflater.inflate(R.layout.square_page, container, false);
@@ -55,8 +58,6 @@ public class MessageFragment extends DemoFragment {
     });
     mMessagePresenter.onCreate();
   }
-
-
 
   public void show(List<PersonalPic> pics){
     List<MessageAdapter> ppas = mMap2(pics);

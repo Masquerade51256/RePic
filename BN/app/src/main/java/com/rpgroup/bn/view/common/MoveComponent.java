@@ -1,4 +1,4 @@
-package com.rpgroup.bn.view;
+package com.rpgroup.bn.view.common;
 
 import android.content.Context;
 import android.graphics.Bitmap;

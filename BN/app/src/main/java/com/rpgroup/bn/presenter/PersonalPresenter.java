@@ -1,7 +1,5 @@
 package com.rpgroup.bn.presenter;
 
-import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 import com.rpgroup.bn.R;
 import com.rpgroup.bn.data.InfoConfig;
@@ -28,7 +26,8 @@ public class PersonalPresenter extends BasePresenter{
   }
 
   private void checkSum(String name) {
-    this.mCreationLoader.findByName(name).subscribe(new Consumer<List<PersonalPic>>() {
+    this.mCreationLoader.findByName(name).subscribe(
+            new Consumer<List<PersonalPic>>() {
       @Override
       public void accept(List<PersonalPic> creations) {
         size = creations.size();
@@ -37,7 +36,8 @@ public class PersonalPresenter extends BasePresenter{
         ((TextView)view.getView().findViewById(R.id.tv_userName_personal)).setText(InfoConfig.getUserName());
 
       }
-    },new Consumer<Throwable>() {
+    },
+            new Consumer<Throwable>() {
       @Override
       public void accept(Throwable throwable) throws Exception {
       }

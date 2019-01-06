@@ -3,6 +3,7 @@ package com.rpgroup.bn.view.fragment;
 import static com.example.apple.marvelgallery.view.common.ViewExtKt.mMap;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.support.v7.widget.GridLayoutManager;
@@ -23,12 +24,10 @@ import java.util.List;
 
 public class PersonalFragment extends DemoFragment{
 private View view;
-private int picNumber=0;
-private ArrayList<String> urlGroup;
 private RecyclerView mRecyclerView;
 private SwipeRefreshLayout mSwipeRefreshLayout;
 private PersonalPresenter mPersonalPresenter;
-
+  @Nullable
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     view = inflater.inflate(R.layout.personal_page, container, false);
@@ -51,7 +50,7 @@ private PersonalPresenter mPersonalPresenter;
           public void run() {
             mSwipeRefreshLayout.setRefreshing(false);
           }
-        }, 1000);
+        }, 700);
       }
     });
     mPersonalPresenter.onCreate();
