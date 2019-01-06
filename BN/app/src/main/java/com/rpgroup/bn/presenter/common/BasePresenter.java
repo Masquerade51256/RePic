@@ -1,8 +1,9 @@
-package com.rpgroup.bn.presenter;
+package com.rpgroup.bn.presenter.common;
 
 import com.rpgroup.bn.view.base.BaseView;
 
-public abstract class BasePresenter <V extends BaseView> {
+//presenter基类
+public abstract class BasePresenter<V extends BaseView> {
 
   private V view;
 

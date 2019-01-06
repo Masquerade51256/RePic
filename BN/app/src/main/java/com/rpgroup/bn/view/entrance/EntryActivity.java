@@ -11,9 +11,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-import com.rpgroup.bn.DemoActivity;
+import com.rpgroup.bn.view.navigation.NavigationActivity;
 import com.rpgroup.bn.R;
-import com.rpgroup.bn.presenter.UserSharedPreferenceConfig;
+import com.rpgroup.bn.presenter.common.UserSharedPreferenceConfig;
 import com.rpgroup.bn.presenter.entrancePresenter.LoginPresenter;
 import com.rpgroup.bn.view.base.BaseActivity;
 
@@ -27,9 +27,9 @@ public class EntryActivity extends BaseActivity<LoginView,LoginPresenter> implem
 
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_login);
 
-    if(getIntent()!=null){
+    if (getIntent()!= null) {
       Intent intent = getIntent();
     }
 
@@ -41,7 +41,7 @@ public class EntryActivity extends BaseActivity<LoginView,LoginPresenter> implem
 
   }
 
-  private void initUI(){
+  private void initUI() {
     name_input = findViewById(R.id.name_input);
     password_input = findViewById(R.id.password_input);
     btn_login = findViewById(R.id.logIn_btn);
@@ -55,7 +55,7 @@ public class EntryActivity extends BaseActivity<LoginView,LoginPresenter> implem
         String password = password_input.getText().toString();
 
         //实例化SharedPreferences对象
-        if(mSharedPreferences == null){
+        if (mSharedPreferences == null) {
           mSharedPreferences = getApplicationContext().getSharedPreferences(
               UserSharedPreferenceConfig.SP_USER_CONFIG, Context.MODE_PRIVATE);
         }
@@ -110,43 +110,39 @@ public class EntryActivity extends BaseActivity<LoginView,LoginPresenter> implem
 
   }
 
-  private void initData(){
+  private void initData() {
     //实例化SharedPreferences对象
-    if(mSharedPreferences == null){
+    if (mSharedPreferences == null) {
       mSharedPreferences = getApplicationContext().getSharedPreferences(
           UserSharedPreferenceConfig.SP_USER_CONFIG, Context.MODE_PRIVATE);
     }
 
     name_input.setText(mSharedPreferences.getString(UserSharedPreferenceConfig.SP_NAME, ""));
-    password_input.setText(mSharedPreferences.getString(UserSharedPreferenceConfig.SP_MD5PASSWORD, ""));
+    password_input.setText(
+        mSharedPreferences.getString(UserSharedPreferenceConfig.SP_MD5PASSWORD, ""));
 
-    isFirstUsed = false;
-
-    if(name_input.getText()==null){
-      isFirstUsed = true;
-    }
+    isFirstUsed = name_input.getText() == null;
 
   }
 
-    @Override
-    public LoginPresenter createPresenter() {
-        return new LoginPresenter();
-    }
+  @Override
+  public LoginPresenter createPresenter() {
+    return new LoginPresenter();
+  }
 
-    @Override
-    public LoginView createView() {
+  @Override
+  public LoginView createView() {
         return this;
     }
 
-    @Override
-    public void onLoginResult(boolean success, String userName, String result) {
-      Toast.makeText(EntryActivity.this,result,Toast.LENGTH_LONG).show();
-
-      if(success){
-        Intent intent = new Intent(EntryActivity.this, DemoActivity.class);
-        intent.putExtra("userName",userName);
-        startActivity(intent);
-        EntryActivity.this.finish();
-      }
+  @Override
+  public void onLoginResult(boolean success, String userName, String result) {
+    Toast.makeText(EntryActivity.this,result,Toast.LENGTH_LONG).show();
+    if (success) {
+      Intent intent = new Intent(EntryActivity.this, NavigationActivity.class);
+      intent.putExtra("userName",userName);
+      startActivity(intent);
+      EntryActivity.this.finish();
     }
+  }
 }

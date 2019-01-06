@@ -8,22 +8,22 @@
   android:id="@+id/personal_page">
     <com.rpgroup.bn.view.views.CircleImageView
       android:id="@+id/imgView_portrait_personal"
-      android:layout_width="96px"
-      android:layout_height="96px"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
       android:src="@drawable/profile_pic1"
       android:layout_alignParentStart="true"
-      android:layout_marginStart="30px"
+      android:layout_marginStart="15dp"
       android:layout_alignParentTop="true"
-      android:layout_marginTop="100px"/>
+      android:layout_marginTop="50dp"/>
     <TextView
       android:id="@+id/tv_userName_personal"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_alignTop="@+id/imgView_portrait_personal"
-      android:layout_alignParentRight="true"
-      android:text="LyXuAn"
+      android:layout_alignParentEnd="true"
+      android:text="@string/userName"
       android:textColor="#515151"
-      android:textSize="42px"
+      android:textSize="20dp"
       android:layout_toEndOf="@+id/imgView_portrait_personal"
       android:layout_marginStart="11dp"/>
 
@@ -36,9 +36,9 @@
       android:paddingTop="10dp"
       android:paddingLeft="10dp"
       android:paddingRight="10dp"
-      android:text="18"
+      android:text="@string/count"
       android:textColor="#515151"
-      android:textSize="45px"/>
+      android:textSize="20dp"/>
     <TextView
       android:id="@+id/tv_creationCountBelow"
       android:layout_width="wrap_content"
@@ -47,9 +47,9 @@
       android:layout_below="@+id/tv_creationCount"
       android:paddingLeft="10dp"
       android:paddingRight="10dp"
-      android:text="作品"
+      android:text="@string/creation"
       android:textColor="#707070"
-      android:textSize="36px"/>
+      android:textSize="18dp"/>
     <View
       android:id="@+id/horizontal_line"
       android:layout_width="match_parent"

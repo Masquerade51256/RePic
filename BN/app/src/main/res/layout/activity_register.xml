@@ -64,7 +64,7 @@
     android:layout_alignParentBottom="true"
     android:layout_centerHorizontal="true"
     android:background="@color/colorBtn"
-    android:text="sign up"
+    android:text="@string/sign_up"
     android:textColor="#ffffff"/>
   <Button
     android:id="@+id/logIn_btn_register"
@@ -74,7 +74,7 @@
     android:layout_alignParentBottom="true"
     android:layout_centerHorizontal="true"
     android:background="@color/colorBtn"
-    android:text="Log in"
+    android:text="@string/login"
     android:textColor="#ffffff"/>
 
 </RelativeLayout>

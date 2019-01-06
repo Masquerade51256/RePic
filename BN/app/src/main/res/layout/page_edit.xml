@@ -30,8 +30,8 @@
           android:layout_marginEnd="8dp"
           android:layout_alignParentBottom="true"
           android:layout_centerHorizontal="true"
-          android:text="Gallery"
-          android:textSize="20px"
+          android:text="@string/gallery"
+          android:textSize="10dp"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toEndOf="@+id/btn_splice" android:layout_marginTop="8dp"
           app:layout_constraintTop_toTopOf="parent"/>
@@ -43,8 +43,8 @@
           android:layout_marginStart="16dp"
           android:layout_above="@+id/btn_gallery"
           android:layout_centerHorizontal="true"
-          android:text="camera"
-          android:textSize="20px"
+          android:text="@string/camera"
+          android:textSize="10dp"
           app:layout_constraintStart_toStartOf="parent"
           android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
 
@@ -53,8 +53,8 @@
           android:layout_width="55dp"
           android:layout_height="wrap_content"
           android:layout_marginStart="24dp"
-          android:text="crop"
-          android:textSize="20px"
+          android:text="@string/crop"
+          android:textSize="10dp"
           app:layout_constraintStart_toEndOf="@+id/btn_camera" android:layout_marginTop="8dp"
           app:layout_constraintTop_toTopOf="parent"/>
 
@@ -63,8 +63,8 @@
           android:layout_width="55dp"
           android:layout_height="wrap_content"
           android:layout_marginStart="24dp"
-          android:text="splice"
-          android:textSize="20px"
+          android:text="@string/splice"
+          android:textSize="10dp"
           app:layout_constraintStart_toEndOf="@+id/btn_save_n_upload" android:layout_marginTop="8dp"
           app:layout_constraintTop_toTopOf="parent"/>
 
@@ -73,8 +73,8 @@
           android:layout_width="55dp"
           android:layout_height="wrap_content"
           android:layout_marginStart="12dp"
-          android:text="Save"
-          android:textSize="20px"
+          android:text="@string/save"
+          android:textSize="10dp"
           app:layout_constraintStart_toEndOf="@+id/btn_crop"
           android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
   <android.support.constraint.ConstraintLayout
@@ -91,12 +91,13 @@
           app:layout_constraintVertical_bias="0.447">
 
     <ImageView
-            android:id="@+id/iv_show"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+      android:id="@+id/iv_show"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:contentDescription="user selection"/>
   </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

@@ -57,10 +57,12 @@ public class GetPhotoFromGallery {
 
         String selection = MediaStore.Images.Media._ID + "=?";
         String[] selectionArgs = {id};
-        filePath = getDataColumn(context, MediaStore.Images.Media.EXTERNAL_CONTENT_URI, selection, selectionArgs);
+        filePath = getDataColumn(context, MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+            selection, selectionArgs);
       } else if (isDownloadsDocument(uri)) {
         Uri contentUri = ContentUris
-            .withAppendedId(Uri.parse("content://downloads/public_downloads"), Long.valueOf(documentId));
+            .withAppendedId(Uri.parse("content://downloads/public_downloads"),
+                Long.valueOf(documentId));
         filePath = getDataColumn(context, contentUri, null, null);
       }
     } else if ("content".equalsIgnoreCase(uri.getScheme())) {

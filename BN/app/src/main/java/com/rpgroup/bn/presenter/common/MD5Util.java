@@ -1,10 +1,10 @@
-package com.rpgroup.bn.presenter;
+package com.rpgroup.bn.presenter.common;
 
 import java.security.MessageDigest;
 
-//Encrypt
+//Encrypt MD5 加密
 public class MD5Util {
-  public final static String MD5(String s) {
+  public static String MD5(String s) {
     char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
         'a', 'b', 'c', 'd', 'e', 'f' };
     try {

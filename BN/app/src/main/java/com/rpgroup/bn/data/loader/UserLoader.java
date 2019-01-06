@@ -6,24 +6,25 @@ import com.rpgroup.bn.model.User;
 import io.reactivex.Observable;
 import io.reactivex.functions.Function;
 
-public class UserLoader extends ObjectLoader{
-  private UserApi mUserApi;
+//把请求逻辑封装在在一个业务Loader 里面，一个Loader里面可以处理多个 Api 接口
+public class UserLoader extends ObjectLoader {
+  private final UserApi mUserApi;
 
-  public UserLoader(){
+  public UserLoader() {
     mUserApi = RetrofitServiceManager.getInstance().create(UserApi.class);
   }
 
-  public Observable<User> getUser(String name){
+  public Observable<User> getUser(String name) {
     return observe(mUserApi.getUser(name))
         .map(new Function<User, User>() {
           @Override
-          public User apply (User user) {
+          public User apply(User user) {
             return user;
           }
         });
   }
 
-  public Observable<User> insertUser(String name,String password){
+  public Observable<User> insertUser(String name,String password) {
     return observe(mUserApi.InsertUser(name, password))
         .map(new Function<User, User>() {
           @Override

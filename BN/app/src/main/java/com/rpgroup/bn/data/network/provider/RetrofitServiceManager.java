@@ -6,27 +6,22 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+//每一个请求，都需要一个接口，
+//里面定义了请求方法和请求参数等等，
+//而获取接口实例需要通过一个Retrofit实例
 public class RetrofitServiceManager {
   private static final int DEFAULT_TIME_OUT = 60;//超时时间 5s
 
   private static final int DEFAULT_READ_TIME_OUT = 60;
 
-  private Retrofit mRetrofit;
+  private final Retrofit mRetrofit;
 
-  private RetrofitServiceManager(){
+  private RetrofitServiceManager() {
     // 创建 OKHttpClient
     OkHttpClient.Builder builder = new OkHttpClient.Builder();
     builder.connectTimeout(DEFAULT_TIME_OUT, TimeUnit.SECONDS);//连接超时时间
     builder.writeTimeout(DEFAULT_READ_TIME_OUT,TimeUnit.SECONDS);//写操作 超时时间
     builder.readTimeout(DEFAULT_READ_TIME_OUT,TimeUnit.SECONDS);//读操作超时时间
-
-//      // 添加公共参数拦截器
-//      HttpCommonInterceptor commonInterceptor = new HttpCommonInterceptor.Builder()
-//          .addHeaderParams("paltform","android")
-//          .addHeaderParams("userToken","1234343434dfdfd3434")
-//          .addHeaderParams("userId","123445")
-//          .build();
-//      builder.addInterceptor(commonInterceptor);
 
     // 创建Retrofit
     mRetrofit = new Retrofit.Builder()
@@ -37,7 +32,7 @@ public class RetrofitServiceManager {
         .build();
   }
 
-  private static class SingletonHolder{
+  private static class SingletonHolder {
     private static final RetrofitServiceManager INSTANCE = new RetrofitServiceManager();
   }
 
@@ -45,7 +40,7 @@ public class RetrofitServiceManager {
    * 获取RetrofitServiceManager
    * @return
    */
-  public static RetrofitServiceManager getInstance(){
+  public static RetrofitServiceManager getInstance() {
     return SingletonHolder.INSTANCE;
   }
 
@@ -55,7 +50,7 @@ public class RetrofitServiceManager {
    * @param <T>
    * @return
    */
-  public <T> T create(Class<T> service){
+  public <T> T create(Class<T> service) {
     return mRetrofit.create(service);
   }
 }

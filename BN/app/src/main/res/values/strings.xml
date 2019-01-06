@@ -4,6 +4,19 @@
     <string name="hint_name">User Name</string>
     <string name="hint_password">Password</string>
     <string name="hint_password1">Password again </string>
+    <string name="userName">LyXuAn</string>
+    <string name="count">18</string>
+    <string name="creation">作品</string>
+    <string name="login">Log in</string>
+    <string name="sign_up">sign up</string>
+    <string name="square">square</string>
+    <string name="create">create</string>
+    <string name="personal">personal</string>
+    <string name="gallery">gallery</string>
+    <string name="camera">camera</string>
+    <string name="crop">crop</string>
+    <string name="splice">splice</string>
+    <string name="save">save</string>
 
 
     <string name="tab_1">Label 1</string>

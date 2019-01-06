@@ -1,5 +1,6 @@
 package com.rpgroup.bn.model;
 
+//用户类，与database的user对应
 public class User {
   private String password;
   private String name;

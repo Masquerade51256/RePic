@@ -8,12 +8,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-import com.rpgroup.bn.DemoActivity;
 import com.rpgroup.bn.R;
 import com.rpgroup.bn.presenter.entrancePresenter.RegisterPresenter;
 import com.rpgroup.bn.view.base.BaseActivity;
 
-public class RegisterActivity extends BaseActivity<RegisterView,RegisterPresenter> implements RegisterView  {
+public class RegisterActivity extends BaseActivity<RegisterView,RegisterPresenter>
+    implements RegisterView  {
 
   @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class RegisterActivity extends BaseActivity<RegisterView,RegisterPresente
   @Override
   public void onRegisterResult(boolean success, String userName, String result) {
     Toast.makeText(RegisterActivity.this,result,Toast.LENGTH_LONG).show();
-    if(success){
+    if (success) {
       Intent intent = new Intent(RegisterActivity.this, EntryActivity.class);
       startActivity(intent);
       RegisterActivity.this.finish();

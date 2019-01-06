@@ -8,43 +8,45 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 
+//可拖动可拼合图片类
 public class MoveComponent {
 
-  private int[] lctView = new int[2];
+  private final int[] lctView = new int[2];
   private int myOrder;
+
   private float x, y, rX, rY, tchX, tchY;
-  private ImageView img;
-  private Bitmap bitmap;
+  private final ImageView img;
+  private final Bitmap bitmap;
   private MoveComponent leftMc, rightMc;
 
   private static float notifyBarHeight;
-  private static int lastOrder = 0;//最后一次移动组件的Z轴值
-  private static int proportion = 1;
-  private static MoveComponent lastMc = null;
+  private static int lastOrder = 0;//最后一次移动组件的Z轴值，从0开始
+  private static final int proportion = 1;//图片缩放比例，用于计算初始化及拼合时的尺寸，目前写死
+  private static MoveComponent lastMc = null;//用链表存储当前ViewGroup中所有MoveComponent
   private static ViewGroup vg;
 
-  public MoveComponent(Bitmap bm, Context mac, ViewGroup vg){
+  public MoveComponent(Bitmap bm, Context mac, ViewGroup vg) {
     bitmap = bm;
-    int w = bitmap.getWidth()/proportion;
-    int h = bitmap.getHeight()/proportion;
+    int w = bitmap.getWidth() / proportion;
+    int h = bitmap.getHeight() / proportion;
 
-    img=new ImageView(mac);
+    img = new ImageView(mac);
     img.setLayoutParams(new LayoutParams(w,h));
     img.setImageBitmap(bitmap);
     this.vg = vg;
     this.vg.addView(img);
 
     img.getLocationOnScreen(lctView);
-    x=(float)lctView[0];
-    y=(float)lctView[1];
+    x = (float)lctView[0];
+    y = (float)lctView[1];
 
-    tchX=0;
-    tchY=0;
-    rX=0;
-    rY=0;
-    leftMc=null;
-    rightMc=null;
-    notifyBarHeight=y-img.getY();
+    tchX = 0;
+    tchY = 0;
+    rX = 0;
+    rY = 0;
+    leftMc = null;
+    rightMc = null;
+    notifyBarHeight = y - img.getY();//适配屏幕坐标
 
     lastOrder++;
     raise(lastOrder);
@@ -79,6 +81,7 @@ public class MoveComponent {
     return notifyBarHeight;
   }
 
+  //初始化时设置三轴属性值
   public void setLocation(float x, float y, int z) {
     this.x = x;
     this.y = y;
@@ -86,12 +89,13 @@ public class MoveComponent {
     img.setY(y - notifyBarHeight);
     raise(z);
   }
-
+  //重载使z轴默认为最上层
   public void setLocation(float x, float y) {
     lastOrder++;
     setLocation(x,y,lastOrder);
   }
 
+  //获取链表尾，即最后移动的MoveComponent，也是拼合操作的操作对象
   public static MoveComponent getLastMc() {
     return lastMc;
   }
@@ -100,53 +104,56 @@ public class MoveComponent {
     return leftMc;
   }
 
-  public  void remove(){
+  //从链表摘除
+  public  void remove() {
     vg.removeView(img);
-    if(this==lastMc){
+    if (this == lastMc) {
       lastMc = null;
-    }
-    else if(leftMc!=null&&rightMc!=null){
-      leftMc.rightMc=rightMc;
-      rightMc.leftMc=leftMc;
+    } else if (leftMc != null && rightMc != null) {
+      leftMc.rightMc = rightMc;
+      rightMc.leftMc = leftMc;
     }
   }
 
+  //摘除最后两个，用于拼合操作后
   public static void remove2() {
     if (lastMc != null && lastMc.leftMc != null && lastMc.leftMc.leftMc != null) {
       vg.removeView(lastMc.leftMc.leftMc.img);
       vg.removeView(lastMc.leftMc.img);
-      lastMc.leftMc=lastMc.leftMc.leftMc.leftMc;
-      if(lastMc.leftMc!=null)
-        lastMc.leftMc.rightMc=lastMc;
+      lastMc.leftMc = lastMc.leftMc.leftMc.leftMc;
+      if (lastMc.leftMc != null) {
+        lastMc.leftMc.rightMc = lastMc;
+      }
     }
   }
 
-  private void raise(int z){
-    myOrder=z;
+  //重设z轴值，并调节其在链表中的位置
+  private void raise(int z) {
+    myOrder = z;
     img.setZ(myOrder);
 
-    if(lastMc==this){
-      return;
-    }
-    else if(leftMc==null&&rightMc==null){
-      leftMc=lastMc;
-      if(lastMc!=null){
-        lastMc.rightMc=this;
+    if (lastMc == this) {
+
+    } else if (leftMc == null && rightMc == null) {
+      leftMc = lastMc;
+      if (lastMc != null) {
+        lastMc.rightMc = this;
       }
-      lastMc=this;
-      return;
-    }
-    else{
-      rightMc.leftMc=leftMc;
-      if(leftMc!=null)
-        leftMc.rightMc=rightMc;
-      rightMc=null;
-      leftMc=lastMc;
-      lastMc.rightMc=this;
-      lastMc=this;
-      return;
+      lastMc = this;
+
+    } else {
+      rightMc.leftMc = leftMc;
+      if (leftMc != null) {
+        leftMc.rightMc = rightMc;
+      }
+      rightMc = null;
+      leftMc = lastMc;
+      lastMc.rightMc = this;
+      lastMc = this;
+
     }
   }
+
 
   private class MoveTouchListener implements View.OnTouchListener {
     @Override
@@ -193,5 +200,4 @@ public class MoveComponent {
       return true;
     }
   }
-
 }

@@ -4,7 +4,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
 
-import com.rpgroup.bn.DemoFragment;
+import com.rpgroup.bn.view.navigation.NavigationFragment;
 import java.util.ArrayList;
 
 /**
@@ -12,22 +12,20 @@ import java.util.ArrayList;
  */
 public class DemoViewPagerAdapter extends FragmentPagerAdapter {
 
-	private ArrayList<DemoFragment> fragments = new ArrayList<>();
-	private DemoFragment currentFragment;
+	private final ArrayList<NavigationFragment> fragments = new ArrayList<>();
+	private NavigationFragment currentFragment;
 
 	public DemoViewPagerAdapter(FragmentManager fm) {
 		super(fm);
 
 		fragments.clear();
-		fragments.add(DemoFragment.newInstance(0));
-		fragments.add(DemoFragment.newInstance(1));
-		fragments.add(DemoFragment.newInstance(2));
-//		fragments.add(DemoFragment.newInstance(3));
-//		fragments.add(DemoFragment.newInstance(4));
+		fragments.add(NavigationFragment.newInstance(0));
+		fragments.add(NavigationFragment.newInstance(1));
+		fragments.add(NavigationFragment.newInstance(2));
 	}
 
 	@Override
-	public DemoFragment getItem(int position) {
+	public NavigationFragment getItem(int position) {
 		return fragments.get(position);
 	}
 
@@ -39,7 +37,7 @@ public class DemoViewPagerAdapter extends FragmentPagerAdapter {
 	@Override
 	public void setPrimaryItem(ViewGroup container, int position, Object object) {
 		if (getCurrentFragment() != object) {
-			currentFragment = ((DemoFragment) object);
+			currentFragment = ((NavigationFragment) object);
 		}
 		super.setPrimaryItem(container, position, object);
 	}
@@ -47,7 +45,7 @@ public class DemoViewPagerAdapter extends FragmentPagerAdapter {
 	/**
 	 * Get the current fragment
 	 */
-	public DemoFragment getCurrentFragment() {
+	public NavigationFragment getCurrentFragment() {
 		return currentFragment;
 	}
 }
